@@ -60,10 +60,11 @@ if submitted:
             "YearsWithCurrManager": 2,
             "EmployeeCount": 1,
             "Over18": "Y",
-            "StandarHours": 80,
+            "StandardHours": 80,
             "EmployeeNumber": 1,
         }])
 
         prediction = model.predict(input_data)[0]
         label = "Yes (Will Leave)" if prediction == 1 else "No (Will Stay)"
         st.success(f"Prediction: {label}")
+
