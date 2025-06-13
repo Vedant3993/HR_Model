@@ -6,10 +6,9 @@ from utils import binary_cleanup
 
 
 
-try:
-    model = joblib.load(r"C:\Users\HP\OneDrive\Desktop\ds\ml\Employee\attrition_model.joblib")
-except Exception as e:
-    st.error(f"Error loading model: {e}")
+
+model = joblib.load("attrition.joblib")
+
 
 st.title("Employee Attrition Predication")
 
@@ -67,4 +66,3 @@ if submitted:
         prediction = model.predict(input_data)[0]
         label = "Yes (Will Leave)" if prediction == 1 else "No (Will Stay)"
         st.success(f"Prediction: {label}")
-
