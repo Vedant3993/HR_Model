@@ -1,12 +1,16 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
+import sklearn 
 from utilis import binary_cleanup
 
 
 
-model= joblib.load("model.joblib")
+try:
+    model = joblib.load(r"C:\Users\HP\OneDrive\Desktop\ds\ml\Employee\attrition_model.joblib")
+except Exception as e:
+    st.error(f"Error loading model: {e}")
+
 st.title("Employee Attrition Predication")
 
 with st.form("attrition_form"):
